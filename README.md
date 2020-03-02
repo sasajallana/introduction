@@ -1,3 +1,5 @@
 # React for Liferay FE: POC 
 
-Documentation to be uploaded. 
+Looking into folder "introduction".
+
+Currently creating documentation through Figma on setting up ReactJS with Liferay Tomcat local instance that will be uploaded as well.  
