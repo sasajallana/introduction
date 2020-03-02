@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC&display=swap');
+
+.allBlogs {
+  margin: 3em;
+}
+
+.bloglist {
+  background-color: cornflowerblue;
+  .title {
+    font-family: 'IM Fell English SC';
+    font-size: 3em
+  }
+  .post {
+    background-color: lavender;
+  }
+}
+
+.blogposts {
+  width: 100%;
+  display: inline-block;
+}

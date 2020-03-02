@@ -1,23 +1,16 @@
 import React from 'react';
 import BlogList from './BlogList';
+import './style/blogs.scss';
 
 export default class BlogWindow extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       allBlogs: [],
-      blogFilters: [],
-      keywordBlogs: [],
-      keyword: '',
-      dummy: '',
-      render: false
+      keywords: [],
     }
     this.getAllBlogs = this.getAllBlogs.bind(this); 
     this.getKeywordsFromAllBlogs = this.getKeywordsFromAllBlogs.bind(this);
-    this.setFiltersFromKeywords = this.setFiltersFromKeywords.bind(this);
-    this.getBlogsFromKeywords = this.getBlogsFromKeywords.bind(this);
-    this.tester = this.tester.bind(this);
   }
 
   getAllBlogs() {
@@ -54,45 +47,11 @@ export default class BlogWindow extends React.Component {
         }
       ))
     }
-    return keywords;
-  }
-
-  setFiltersFromKeywords(keywords) {
-    if(this.state.blogFilters.length == 0 && keywords.length !== 0) {
+    if(this.state.keywords.length == 0) {
       this.setState({
-        blogFilters: keywords
+        keywords: keywords
       })
-    } else if(this.state.blogFilters > 0) {
-      return;
     }
-  }
-
-  getBlogsFromKeywords(keyword) {
-    var fetcher = "http://localhost:8080/o/headless-delivery/v1.0/sites/20123/blog-postings/?filter=keywords/any(k:k eq '" + keyword + "')";
-    fetch(fetcher, {
-      "async": true,
-      "crossDomain": true,
-      "method": "GET",
-      "headers": {
-        "cache-control": "no-cache",
-        "Authorization": "Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0ZQ=="
-      }
-    })
-    .then((res) => { 
-        if (!res.ok) throw new Error();
-          else return res.json();
-    })
-    .then((data) => {
-      this.setState({
-        keyword: keyword,
-        keywordBlogs: data.items 
-      })
-    });
-  }
-
-  tester() {
-    var keywords = this.getKeywordsFromAllBlogs();
-    var result = {};
   }
 
   componentWillMount() {
@@ -100,21 +59,23 @@ export default class BlogWindow extends React.Component {
   }
 
   componentDidUpdate() {    
-    this.setFiltersFromKeywords(this.getKeywordsFromAllBlogs());
+    this.getKeywordsFromAllBlogs();
   }
 
   render() {
-    const { blogFilters, keywordBlogs, render } = this.state;
-    
-    console.log(this.state.allBlogs);
-    console.log(this.state.keywordBlogs);
-    console.log(this.tester());
+    const { allBlogs, keywords } = this.state;
+
+    const posts = keywords.map((keyword, i) => {
+      return (
+        <BlogList id={i} title={keyword} data={allBlogs}/>
+      );
+    });
+
 
     return (
-      <div>
-        <p>{this.state.blogFilters}</p>
+      <div className="allBlogs">
+        {posts}
       </div>
     )
   }
 }
-
