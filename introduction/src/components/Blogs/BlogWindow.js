@@ -73,8 +73,13 @@ export default class BlogWindow extends React.Component {
 
 
     return (
-      <div className="allBlogs">
-        {posts}
+      <div className="blogContainer">
+        <div className="blogContainer all">
+          {posts}
+        </div>
+        <div className="blogContainer display">
+          <p>ege</p>
+        </div>
       </div>
     )
   }

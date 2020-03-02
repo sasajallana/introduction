@@ -52,6 +52,7 @@ export default class BlogList extends React.Component {
             date={post.dateCreated}
             body={post.articleBody}
             total={this.state.blogPosts.length}
+            img={post.image ? post.image.contentUrl : null}
           />
         )
       });
