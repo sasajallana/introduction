@@ -24,10 +24,9 @@ export default class BlogPost extends React.Component {
   render() {
     return(
       <div className="bloglist post" style={{width: this.getWidth + '%'}}>
-        <p>{this.props.title}</p>
+        <div className="bloglist post title">{this.props.title}</div>
         <p>{this.props.date}</p>
-        <p>{this.returnString(this.props.body)}</p>
-        <p>{this.props.total}</p>
+        <p>{this.props.tag}</p>
       </div>
     )
   }

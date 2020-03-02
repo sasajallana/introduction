@@ -48,7 +48,7 @@ export default class BlogList extends React.Component {
           <BlogPost 
             id={i}
             title={post.headline}
-            alt={post.alternativeHeadline}
+            tag={post.alternativeHeadline}
             date={post.dateCreated}
             body={post.articleBody}
             total={this.state.blogPosts.length}
@@ -71,10 +71,12 @@ export default class BlogList extends React.Component {
 
     return (
       <div className={"bloglist " + title.replace(/ /g,'')}>
-        <div className={"blogrow-" + id}>
-          <p className="bloglist title">{title}</p>
-          <div className={"blogposts"}>
-            {this.renderBlogs()}
+        <div className={"blogrow"}>
+          <div className={"blogrow container"}>
+            <div className="bloglist title">{title}</div>
+            <div className={"blogposts"}>
+              {this.renderBlogs()}
+            </div>
           </div>
         </div>
       </div>
