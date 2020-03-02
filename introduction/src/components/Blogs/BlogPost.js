@@ -7,10 +7,18 @@ export default class BlogPost extends React.Component {
     this.state = {
     }
     this.getWidth = this.getWidth.bind(this);
+    this.returnString = this.returnString.bind(this);
   }
 
   getWidth() {
     return (1 / this.props.total) * 100;
+  }
+
+  returnString(toString) {
+    var string = document.createElement("p");
+    string.innerHTML = toString;
+    var text = string.textContent || string.innerText || "";
+    return text; 
   }
 
   render() {
@@ -18,7 +26,7 @@ export default class BlogPost extends React.Component {
       <div className="bloglist post" style={{width: this.getWidth + '%'}}>
         <p>{this.props.title}</p>
         <p>{this.props.date}</p>
-        <p>{this.props.body}</p>
+        <p>{this.returnString(this.props.body)}</p>
         <p>{this.props.total}</p>
       </div>
     )
