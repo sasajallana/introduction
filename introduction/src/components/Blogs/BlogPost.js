@@ -25,14 +25,21 @@ export default class BlogPost extends React.Component {
 
   retrieveImage() {
     if(this.props.image !== null) {
-      return (<img src={this.host + this.props.image.contentUrl}></img>)
+    const divStyle = {
+      backgroundImage: url(this.host + this.props.image.contentUrl)
+    };
+      return (
+        <div 
+          className="bloglist post image"
+          style={divStyle}></div>
+      )
     }
   }
 
   render() {
     this.retrieveImage();
     return(
-      <div className="bloglist post" style={{width: this.getWidth + '%'}}>
+      <div className="bloglist post">
         <div className="bloglist post title">{this.props.title}</div>
         <p>{this.props.date}</p>
         <p>{this.props.tag}</p>
