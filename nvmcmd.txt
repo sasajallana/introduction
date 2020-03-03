@@ -1,0 +1,5 @@
+  141  export NVM_DIR="$HOME/.nvm"
+  142  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  143  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  146  nvm install --lts=dubnium
+  163  nvm use lts=dubnium
