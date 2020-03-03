@@ -34,6 +34,14 @@ export default class BlogList extends React.Component {
     });
   }
 
+  retrieveImage() {
+    if(this.state.blogPosts !== null && ("image" in this.state.blogPosts)) {
+      const test = this.state.blogPosts.map((post) => {
+        console.log("hello");
+      })
+    }
+  }
+
   renderBlogs() {
     var body = [];
     if(this.state.blogPosts !== 0 && this.state.render == false) {
@@ -44,6 +52,7 @@ export default class BlogList extends React.Component {
 
     if(this.state.render == true) {
       body = this.state.blogPosts.map((post, i) => {
+        this.retrieveImage(post);
         return (
           <BlogPost 
             id={i}
@@ -52,7 +61,7 @@ export default class BlogList extends React.Component {
             date={post.dateCreated}
             body={post.articleBody}
             total={this.state.blogPosts.length}
-            img={post.image ? post.image.contentUrl : null}
+            // img={post.image ? post.image.contentUrl : null}
           />
         )
       });

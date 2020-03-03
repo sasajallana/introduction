@@ -22,7 +22,6 @@ export default class BlogPost extends React.Component {
   }
 
   render() {
-    console.log(this.props.image + "rtest")
     return(
       <div className="bloglist post" style={{width: this.getWidth + '%'}}>
         <div className="bloglist post title">{this.props.title}</div>

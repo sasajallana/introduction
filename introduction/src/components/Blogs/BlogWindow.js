@@ -62,6 +62,11 @@ export default class BlogWindow extends React.Component {
     this.getKeywordsFromAllBlogs();
   }
 
+  componentDidMount() {
+    console.log(window.innerHeight + " :height");
+    console.log(window.innerWidth + " :width");
+  }
+
   render() {
     const { allBlogs, keywords } = this.state;
 
