@@ -44,12 +44,8 @@ export default class BlogPost extends React.Component {
 
     return(
       <div className="blogs post">
-        <div className="blogs post contents" style={imgStyle}>
-          <div className="blogs post contents title">
-            {this.props.title}
-          </div>
-            <br></br>
-            <div className="blogs post contents info">{this.props.tag}</div>
+        <div className="post contents" style={imgStyle}>
+          <div className="post title">{this.props.title}</div>
         </div>
       </div>
     )

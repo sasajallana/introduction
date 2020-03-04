@@ -80,7 +80,8 @@ export default class BlogWindow extends React.Component {
     return (
       <div className="blogContainer">
         <div className="blogContainer all">
-          {posts}
+          {/* {posts} */}
+          <BlogList id={0} title={"volunteer"} data={allBlogs}/>
         </div>
         <div className="blogContainer display">
           <p>ege</p>
