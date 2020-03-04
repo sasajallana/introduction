@@ -1,4 +1,5 @@
 import React from 'react';
+import titlebg from './img/titlebg.png';
 
 export default class BlogPost extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class BlogPost extends React.Component {
     }
     this.getWidth = this.getWidth.bind(this);
     this.returnString = this.returnString.bind(this);
-    this.host = "http://localhost:8080/";
+    this.host = "http://localhost:8080";
   }
 
   getWidth() {
@@ -24,26 +25,32 @@ export default class BlogPost extends React.Component {
   }
 
   retrieveImage() {
-    if(this.props.image !== null) {
-    const divStyle = {
-      backgroundImage: url(this.host + this.props.image.contentUrl)
-    };
+    if(this.props.image !== null) { 
       return (
-        <div 
-          className="bloglist post image"
-          style={divStyle}></div>
+        this.props.image.contentUrl
       )
     }
   }
 
   render() {
-    this.retrieveImage();
+
+    const image = this.retrieveImage();
+    const imgStyle = {
+      backgroundImage: 'url(' + this.host + image + ')',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }
+    console.log(imgStyle)
+
     return(
-      <div className="bloglist post">
-        <div className="bloglist post title">{this.props.title}</div>
-        <p>{this.props.date}</p>
-        <p>{this.props.tag}</p>
-        {this.retrieveImage()}
+      <div className="blogs post">
+        <div className="blogs post contents" style={imgStyle}>
+          <div className="blogs post contents title">
+            {this.props.title}
+          </div>
+            <br></br>
+            <div className="blogs post contents info">{this.props.tag}</div>
+        </div>
       </div>
     )
   }

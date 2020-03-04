@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogPost from './BlogPost';
 import './style/blogs.scss';
+import titlebg from './img/titlebg.png';
 
 export default class BlogList extends React.Component {
   constructor(props) {
@@ -67,16 +68,21 @@ export default class BlogList extends React.Component {
 
   render() {
     const { title, data, id } = this.props;
-    const { blogPosts } = this.state; 
-
-    console.log(blogPosts);
+    const { blogPosts } = this.state;
+    
+    const titleStyle = {
+      backgroundImage: 'url(' + titlebg + ')',
+      backgroundSize: 'cover'
+    }
 
     return (
       <div className={"bloglist " + title.replace(/ /g,'')}>
         <div className={"blogrow"}>
           <div className={"blogrow container"}>
-            <div className="bloglist title">{title}</div>
-            <div className={"blogposts"}>
+            <div className="bloglist title">
+              {title}
+            </div>
+            <div className={"blogs"}>
               {this.renderBlogs()}
             </div>
           </div>
