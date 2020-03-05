@@ -23,7 +23,6 @@
 }
 
 .bloglist {
-  background-color: cornflowerblue;
   width: 100%;
   .title {
     font-family: 'Autour One';
@@ -46,6 +45,8 @@
     height: 100%;
     color: white;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
   }
   .title {
     font-size: 2em;
@@ -53,4 +54,26 @@
     font-weight: bold;
     text-shadow: 2px 2px 5px #000000;
   }
+}
+
+.left1 {
+  width: 10%;
+}
+
+.left2 {
+  width: 10%;
+  height: 75%;
+  border-left: 2px solid white;
+  margin: auto;
+}
+
+.middle {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  width: 15%;
 }
