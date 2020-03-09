@@ -1,0 +1,4 @@
+Bundle-Name: registration
+Bundle-SymbolicName: com.liferay.docs.registration
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.docs.registration.constants
