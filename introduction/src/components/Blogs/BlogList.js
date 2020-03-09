@@ -78,8 +78,8 @@ export default class BlogList extends React.Component {
     return (
       <div className={"bloglist " + title.replace(/ /g,'')}>
         <div className={"blogrow"}>
-          <div className={"blogrow container"}>
-            <div className="bloglist title">
+          <div className={"blogrow-container"}>
+            <div className="blogrow-title">
               {title}
             </div>
             <div className={"blogs"}>

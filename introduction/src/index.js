@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 import BlogWindow from './components/Blogs/BlogWindow';
 
 ReactDOM.render(<BlogWindow />, document.getElementById('root'));
