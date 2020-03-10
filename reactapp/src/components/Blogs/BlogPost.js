@@ -6,7 +6,8 @@ export default class BlogPost extends React.Component {
     super(props);
 
     this.state = {
-      image: ""
+      image: "",
+      selected: {}
     }
     this.getWidth = this.getWidth.bind(this);
     this.returnString = this.returnString.bind(this);
@@ -32,8 +33,16 @@ export default class BlogPost extends React.Component {
     }
   }
 
-  render() {
+  renderPost() {
+    if(this.state.selected) {
+      return ReactDOM.createPortal(
+        this.props.children,
+        blogContainer-display
+      );
+    }
+  }
 
+  render() {
     const image = this.retrieveImage();
     const imgStyle = {
       backgroundImage: 'url(' + this.host + image + ')',
