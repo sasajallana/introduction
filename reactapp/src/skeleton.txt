@@ -40,4 +40,54 @@ ReactDOM.render(<BlogWindow />, document.getElementById('root'));
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
--- src/index.js END -- 
+-- src/index.js END --
+
+-- BlogWindow.js API START --
+
+import React from 'react';
+
+export default class BlogWindow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      allBlogs: []
+    }
+    this.getAllBlogs = this.getAllBlogs.bind(this);
+  }
+
+  getAllBlogs() {
+    fetch('http://localhost:8080/o/headless-delivery/v1.0/sites/20123/blog-postings/', {
+      "async": true,
+      "crossDomain": true,
+      "method": "GET",
+      "headers": {
+        "cache-control": "no-cache",
+        "Authorization": "Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0ZQ=="
+      }
+    })
+    .then((res) => { 
+        if (!res.ok) throw new Error();
+          else return res.json();
+    })
+    .then((data) => {
+      this.setState({ 
+        allBlogs: data.items 
+      })
+    });
+  }
+
+  componentWillMount() {
+    this.getAllBlogs(); 
+  }
+
+  render() {
+    return (
+      <div className="blogContainer">
+       <div>Hello!</div>
+      </div>
+    )
+  }
+}
+
+-- BlogWindow.js API END --
+
