@@ -114,4 +114,8 @@
 .post {
   margin: 0 auto;
   width: 80%;
+  &-title {
+    font-family: 'Autour One';
+    font-size: 2em;
+  }
 }

@@ -92,7 +92,7 @@ export default class BlogWindow extends React.Component {
           {/* <BlogList id={0} title={"volunteer"} data={allBlogs}/> */}
         </div>
         <div id="blogContainer-display">
-          {/* <p>ege</p> */}
+          Click on a card on the left to view the blog post!
         </div>
       </div>
     )

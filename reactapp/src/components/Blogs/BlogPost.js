@@ -11,8 +11,8 @@ export default class BlogPost extends React.Component {
     this.formatDate = this.formatDate.bind(this);
   }
 
-  formatDate(date) {
-
+  formatDate(createDate) {
+    
   }
 
   render() {
