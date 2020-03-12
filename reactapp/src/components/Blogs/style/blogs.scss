@@ -98,6 +98,10 @@
     }
     &-3 {
       width: 15%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -107,14 +111,13 @@
   height: 0; 
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  
   border-left: 20px solid white;
 }
 
 .post {
   margin: 0 auto;
   margin-top: 10%;
-  width: 80%;
+  width: 70%;
   font-family: 'Ubuntu';
   &-title {
     font-family: 'Autour One';
@@ -122,6 +125,10 @@
   }
   &-date {
     font-size: .7em;
+  }
+  &-line {
+    border-bottom: 1px black solid;
+    height: 20px;
   }
   &-body {
     margin-top: 3%;

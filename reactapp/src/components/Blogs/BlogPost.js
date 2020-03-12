@@ -24,6 +24,7 @@ export default class BlogPost extends React.Component {
           <div className="post-title">{this.props.title}</div>
           <div className="post-sub">{this.props.sub}</div>
           <div className="post-date">{this.formatDate(this.props.date)}</div>
+          <div className="post-line"></div>
           <div className="post-body">{this.props.body}</div>
       </div>
     )
