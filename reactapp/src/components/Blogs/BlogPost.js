@@ -12,7 +12,10 @@ export default class BlogPost extends React.Component {
   }
 
   formatDate(createDate) {
-    
+    var result = "Published on ";
+    var reg = /.+?(?=\T)/;
+    result += reg.exec(createDate);
+    return result;
   }
 
   render() {
@@ -20,7 +23,7 @@ export default class BlogPost extends React.Component {
       <div className="post">
           <div className="post-title">{this.props.title}</div>
           <div className="post-sub">{this.props.sub}</div>
-          <div className="post-date">{this.props.date}</div>
+          <div className="post-date">{this.formatDate(this.props.date)}</div>
           <div className="post-body">{this.props.body}</div>
       </div>
     )

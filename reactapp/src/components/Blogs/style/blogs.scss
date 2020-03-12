@@ -113,9 +113,17 @@
 
 .post {
   margin: 0 auto;
+  margin-top: 10%;
   width: 80%;
+  font-family: 'Ubuntu';
   &-title {
     font-family: 'Autour One';
     font-size: 2em;
+  }
+  &-date {
+    font-size: .7em;
+  }
+  &-body {
+    margin-top: 3%;
   }
 }
