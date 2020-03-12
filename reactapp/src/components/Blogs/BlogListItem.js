@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import titlebg from './img/titlebg.png';
+
+import BlogPost from './BlogPost';
 
 export default class BlogListItem extends React.Component {
   constructor(props) {
@@ -35,7 +36,12 @@ export default class BlogListItem extends React.Component {
 
   displayBlog = () => {
     const element = (
-      <div>{this.props.title}</div>
+      <BlogPost 
+        title={this.props.title}
+        sub={this.props.tag}
+        body={this.returnString(this.props.body)}
+        date={this.props.date}
+      ></BlogPost>
     );
     ReactDOM.render(element, document.getElementById('blogContainer-display'));
   }

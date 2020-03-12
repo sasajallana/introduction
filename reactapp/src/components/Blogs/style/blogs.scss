@@ -18,8 +18,12 @@
 }
 
 #blogContainer-display {
-    width: 60%;
-    border-left: 1px black dotted;
+  width: 60%;
+  border-left: 1px black dotted;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  overflow-y: scroll;
 }
 
 .blogrow {
@@ -107,20 +111,7 @@
   border-left: 20px solid white;
 }
 
-
-//   &.title {
-//     height: 50%;
-//     &.contents {
-      
-//     }
-//   }
-//   .desc {
-//     padding: 5px;
-//     background-color: #A5AA52;
-//     width: 100%;
-//     height: 30%;
-//     margin-top: 10px;
-//     justify-content: center;
-    
-//   }
-// }
+.post {
+  margin: 0 auto;
+  width: 80%;
+}
