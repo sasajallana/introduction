@@ -1,13 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import titlebg from './img/titlebg.png';
 
-export default class BlogPost extends React.Component {
+export default class BlogListItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      image: "",
-      selected: {}
+      image: ""
     }
     this.getWidth = this.getWidth.bind(this);
     this.returnString = this.returnString.bind(this);
@@ -33,13 +33,11 @@ export default class BlogPost extends React.Component {
     }
   }
 
-  renderPost() {
-    if(this.state.selected) {
-      return ReactDOM.createPortal(
-        this.props.children,
-        blogContainer-display
-      );
-    }
+  displayBlog = () => {
+    const element = (
+      <div>{this.props.title}</div>
+    );
+    ReactDOM.render(element, document.getElementById('blogContainer-display'));
   }
 
   render() {
@@ -52,7 +50,7 @@ export default class BlogPost extends React.Component {
     console.log(imgStyle)
 
     return(
-      <div className="blogs-posts" style={imgStyle}>
+      <div className="blogs-posts" style={imgStyle} onClick={this.displayBlog}>
         <div className="blogs-posts-contents">
           <div className="blogs-posts-1"></div>
           <div className="blogs-posts-2"></div>

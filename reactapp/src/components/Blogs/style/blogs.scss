@@ -15,10 +15,11 @@
     min-height: 100%;
     overflow-y: scroll;
   }
-  &-display {
+}
+
+#blogContainer-display {
     width: 60%;
     border-left: 1px black dotted;
-  }
 }
 
 .blogrow {
@@ -68,7 +69,7 @@
       align-self: center;
       &-title {
         height: 55%;
-        font-size: 2em;
+        font-size: 1.5em;
         font-family: 'Ubuntu', sans-serif;
         color: #ffffff;
         font-weight: bold;
@@ -84,6 +85,9 @@
           margin-top: 2%;
           &-inner {
             margin: 5%;
+            font-size: .9em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #ffffff;
           }
         }
       }

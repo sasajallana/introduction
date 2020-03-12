@@ -8,9 +8,11 @@ export default class BlogWindow extends React.Component {
     this.state = {
       allBlogs: [],
       keywords: [],
+      selected: {}
     }
     this.getAllBlogs = this.getAllBlogs.bind(this); 
     this.getKeywordsFromAllBlogs = this.getKeywordsFromAllBlogs.bind(this);
+    this.getSelection = this.getSelection.bind(this);
   }
 
   getAllBlogs() {
@@ -54,6 +56,12 @@ export default class BlogWindow extends React.Component {
     }
   }
 
+  getSelection = (selectedBlog) => {
+    this.setState({
+      selected: selectedBlog
+    })
+  }
+
   componentWillMount() {
     this.getAllBlogs();
   }
@@ -72,18 +80,18 @@ export default class BlogWindow extends React.Component {
 
     const posts = keywords.map((keyword, i) => {
       return (
-        <BlogList id={i} title={keyword} data={allBlogs}/>
+        <BlogList id={i} title={keyword} data={allBlogs} />
       );
     });
 
 
     return (
       <div className="blogContainer">
-        <div className="blogContainer-all">
+        <div class="blogContainer-all">
           {posts}
           {/* <BlogList id={0} title={"volunteer"} data={allBlogs}/> */}
         </div>
-        <div className="blogContainer-display">
+        <div id="blogContainer-display">
           {/* <p>ege</p> */}
         </div>
       </div>

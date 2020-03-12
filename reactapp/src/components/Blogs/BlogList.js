@@ -1,5 +1,7 @@
 import React from 'react';
-import BlogPost from './BlogPost';
+import ReactDOM from 'react-dom';
+
+import BlogListItem from './BlogListItem';
 import './style/blogs.scss';
 import titlebg from './img/titlebg.png';
 
@@ -47,8 +49,9 @@ export default class BlogList extends React.Component {
     if(this.state.render == true) {
       body = this.state.blogPosts.map((post, i) => {
         return (
-          <BlogPost 
+          <BlogListItem 
             id={i}
+            total={post}
             title={post.headline}
             tag={post.alternativeHeadline}
             date={post.dateCreated}
