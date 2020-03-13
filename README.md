@@ -6,3 +6,6 @@ Currently creating documentation through Figma on setting up ReactJS with Lifera
 
 Tutorial code located in https://github.com/sasajallana/react-for-liferay-fe/
 
+Final project should look like this:
+
+![Image of project](https://github.com/sasajallana/introduction/blob/master/Introduction%20Reacapp.png)
